@@ -1,18 +1,15 @@
+import java.util.Scanner;
+
 public class Main {
-    int b = 3;
-    int p = 10000;
+
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter text:");
+        String text = scanner.nextLine();
+        System.out.println("Enter pattern:");
+        String pattern = scanner.nextLine();
+        KarpRabin matcher = new KarpRabin(text, pattern, 3, 10000);
     }
 
-    private void findMatches(String text, String pattern) {
 
-    }
-
-    private int hashFunction(String input) {
-        return 0;
-    }
-    private int rollingHashFunction(String input, int previousHash) {
-        return 0;
-    }
 }
