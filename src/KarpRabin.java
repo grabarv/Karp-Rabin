@@ -13,7 +13,21 @@ public class KarpRabin {
     }
 
     public void findMatches(String text, String pattern) {
+        int patternHash = hashFunction(pattern);
+        int hash = -1;
+        for (int i = 0; i < text.length() - pattern.length(); i++) {
+            if (i == 0) {
+                hash = hashFunction(text.substring(i, i+pattern.length()));
+            } else {
+                hash = rollingHashFunction(text.substring(i, i+pattern.length()), hash);
+            }
+            if (hash == patternHash) {
+                if(text.substring(i, i+pattern.length()).equals(pattern)) {
+                    System.out.println("Math Found at index: " + i);
+                }
+            }
 
+        }
     }
 
     private int hashFunction(String input) {
