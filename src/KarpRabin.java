@@ -15,11 +15,11 @@ public class KarpRabin {
     public void findMatches() {
         int patternHash = hashFunction(pattern);
         int hash = -1;
-        for (int i = 0; i < text.length() - pattern.length(); i++) {
+        for (int i = 0; i < text.length() - pattern.length() + 1; i++) {
             if (i == 0) {
                 hash = hashFunction(text.substring(i, i + pattern.length()));
             } else {
-                hash = rollingHashFunction(hash, text.charAt(i-1), text.charAt(i + pattern.length()));
+                hash = rollingHashFunction(hash, text.charAt(i-1), text.charAt(i + pattern.length() - 1));
             }
             if (hash == patternHash) {
                 if(text.substring(i, i+pattern.length()).equals(pattern)) {
