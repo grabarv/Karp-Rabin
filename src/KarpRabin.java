@@ -31,7 +31,11 @@ public class KarpRabin {
     }
 
     private int hashFunction(String input) {
-        return 0;
+        int hash = 0;
+        for (int i = 0; i < input.length(); i++) {
+            hash += (int) (((int) input.charAt(i)) * Math.pow(b, input.length()-i-1));
+        }
+        return hash;
     }
     private int rollingHashFunction(String input, int previousHash) {
         return 0;
