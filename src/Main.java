@@ -9,6 +9,7 @@ public class Main {
         System.out.println("Enter pattern:");
         String pattern = scanner.nextLine();
         KarpRabin matcher = new KarpRabin(text, pattern, 3, 10000);
+        matcher.findMatches();
     }
 
 

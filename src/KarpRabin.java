@@ -12,7 +12,7 @@ public class KarpRabin {
         this.p = p;
     }
 
-    public void findMatches(String text, String pattern) {
+    public void findMatches() {
         int patternHash = hashFunction(pattern);
         int hash = -1;
         for (int i = 0; i < text.length() - pattern.length(); i++) {
